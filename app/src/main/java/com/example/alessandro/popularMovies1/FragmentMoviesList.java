@@ -214,6 +214,10 @@ public class FragmentMoviesList extends Fragment {
         private Uri createMoviesUri(String sortOrder) {
             Uri builtUri;
 
+            // Method based on the StackOverflow question
+            // Error:(64, 72) error: non-static method getString(int)
+            // https://goo.gl/zLSne6
+
             if (sortOrder.equals(popularSortOrder)) {
                 builtUri = Uri.parse(API_POPULAR_MOVIES_BASE_URL);
             } else if (sortOrder.equals(topRatedSortOrder)) {
